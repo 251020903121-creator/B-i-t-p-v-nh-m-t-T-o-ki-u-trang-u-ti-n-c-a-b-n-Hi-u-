@@ -1,86 +1,97 @@
+/* Tổng thể Box Model (YÊU CẦU 4) */
+* {
+    box-sizing: border-box; /* Đảm bảo padding/border không làm vỡ chiều rộng */
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
-    font-size: 16px;
-    margin: 0;
-    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f4f4;
 }
-header {
-    background-color: #800000;
-    padding: 20px;
-}
-nav {
-    background-color: #b30000;
-    padding: 10px;
-}
-main {
-    background-color: #fffdf5;
-    font-size: 18px;
-    padding: 20px;
-}
-footer {
-    background-color: #333333;
-    padding: 10px;
-}
-li {
-    display: inline-block;
-    width: 150px;
-}
-h1 {
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    color: #ffffff;
-    margin: 0;
-}
-p {
-    line-height: 1.8;
-    color: #333333;
-}
-.gallery img {
-    width: 300px;
-    height: 200px;
-    object-fit: cover;
-    margin-right: 10px;
-    margin-top: 10px;
-}
-footer p {
-    color: #ffffff;
-    text-align: center;
-    margin: 0;
-}
-nav ul {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-nav a {
+
+/* ========================================================
+   YÊU CẦU 1: Hiệu ứng chỉ hiển thị liên kết khi tập trung (Focus)
+   ======================================================== */
+.skip-link {
+    position: absolute;
+    top: -100px; /* Đẩy hẳn thẻ ra khỏi màn hình để ẩn đi */
+    left: 10px;
+    background: #bf0000;
     color: white;
+    padding: 10px 15px;
+    z-index: 100;
     text-decoration: none;
     font-weight: bold;
-}
-nav {
-    display: inline-block;
-    width: 80%;
+    border-radius: 4px;
+    transition: top 0.2s ease;
 }
 
-nav img {
-    width: 10%;
+/* Khi người dùng nhấn phím TAB trúng liên kết, nó sẽ hiện ra */
+.skip-link:focus {
+    top: 10px; 
 }
 
-.grid-container {
+/* ========================================================
+   YÊU CẦU 2 & 3: Thanh điều hướng Flexbox hấp dẫn
+   ======================================================== */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.nav-links {
+    display: flex;             /* Sử dụng Flex */
+    justify-content: center;   /* Căn giữa menu */
+    list-style: none;
+    margin-top: 15px;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 5px 10px;
+}
+
+.nav-links a:hover, .nav-links a:focus {
+    color: white;
+    outline: 2px solid #ffcc00; /* Tăng tính truy cập khi dùng phím để di chuyển */
+}
+
+/* ========================================================
+   YÊU CẦU 3 & 4: Bố cục Grid & Mô hình hộp (Box Model) cho thẻ nội dung
+   ======================================================== */
+.grid-layout {
     display: grid;
-    grid-template-columns: 40% 40%; 
-    justify-content: space-between; 
-    align-items: center;          
-    row-gap: 20px;                
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Tự động co giãn theo màn hình */
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.grid-container img {
+/* Sử dụng hiệu quả Margin, Padding, Border (Box Model) */
+.card {
+    background: white;
+    border: 1px solid #ddd;   /* Border */
+    border-radius: 8px;
+    padding: 20px;            /* Padding bên trong */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.card img {
     width: 100%;
-    height: auto; 
-}
-
-.flex-container {
-    display: flex;
-    flex-wrap: wrap;              
-    justify-content: space-around; 
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 15px;      /* Margin bên dưới ảnh */
 }
