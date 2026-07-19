@@ -24,24 +24,49 @@
     </header>
 
     <main id="main-content">
+        
+        <!-- ========================================================
+           MỚI THÊM: Khung hiển thị ảnh lớn (id="image") phục vụ bài tập JS
+           ======================================================== -->
+        <div id="image">
+            Di chuột qua một hình ảnh bên dưới để hiển thị ở đây.
+        </div>
+
         <!-- YÊU CẦU 3: Sử dụng Grid và Flex cho bố cục -->
         <section class="grid-layout">
+            
+            <!-- Ảnh 1: Đã thêm thuộc tính onmouseover và onmouseout để kích hoạt JS -->
             <div class="card">
-                <img src="https://picsum.photos/300/200" alt="Hình ảnh minh họa 1">
+                <img src="https://picsum.photos/600/400?random=1" alt="Vẻ đẹp Tràng An - Ninh Bình" onmouseover="upDate(this)" onmouseout="unDo()">
                 <h3>Địa danh 1</h3>
                 <p>Mô tả ngắn gọn về địa danh thứ nhất.</p>
             </div>
+            
+            <!-- Ảnh 2: Đã thêm thuộc tính onmouseover và onmouseout để kích hoạt JS -->
             <div class="card">
-                <img src="https://picsum.photos/300/200" alt="Hình ảnh minh họa 2">
+                <img src="https://picsum.photos/600/400?random=2" alt="Vịnh Hạ Long - Quảng Ninh" onmouseover="upDate(this)" onmouseout="unDo()">
                 <h3>Địa danh 2</h3>
                 <p>Mô tả ngắn gọn về địa danh thứ hai.</p>
             </div>
+
+            <!-- Ảnh 3: Mình thêm 1 thẻ ảnh nữa cho bố cục Lưới nhìn cân đối và nhiều tư liệu hơn -->
+            <div class="card">
+                <img src="https://picsum.photos/600/400?random=3" alt="Cố đô Huế - Thừa Thiên Huế" onmouseover="upDate(this)" onmouseout="unDo()">
+                <h3>Địa danh 3</h3>
+                <p>Mô tả ngắn gọn về địa danh thứ ba.</p>
+            </div>
+
         </section>
     </main>
 
     <footer>
         <p>&copy; 2026 Khu Di Tích Lịch Sử. Tất cả các quyền được bảo lưu.</p>
     </footer>
+
+    <!-- ========================================================
+       MỚI THÊM: Thẻ kết nối mã nguồn với file JavaScript ở cuối trang
+       ======================================================== -->
+    <script src="gallery.js"></script>
 
 </body>
 </html>
