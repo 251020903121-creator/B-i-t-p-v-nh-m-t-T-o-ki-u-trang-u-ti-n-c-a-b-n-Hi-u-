@@ -95,3 +95,24 @@ header {
     border-radius: 4px;
     margin-bottom: 15px;      /* Margin bên dưới ảnh */
 }
+/* Định dạng cho khung hiển thị ảnh lớn (id="image") */
+#image {
+    width: 100%;
+    height: 450px;
+    border: 4px solid #333;
+    border-radius: 8px;
+    background-color: #8e8e8e;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: #ffffff;
+    font-size: 150%;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
