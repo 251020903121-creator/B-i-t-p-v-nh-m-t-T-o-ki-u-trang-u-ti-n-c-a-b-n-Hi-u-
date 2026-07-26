@@ -3,70 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Web Tổng Hợp</title>
+    <title>Thư viện ảnh tương tác (Interactive Photo Gallery)</title>
     <link rel="stylesheet" href="style.css">
+    <script src="gallery.js" defer></script>
 </head>
-<body>
+<!-- Yêu cầu 8: Thêm trình nghe cho onload -->
+<body onload="initializeGallery()">
 
-    <!-- YÊU CẦU 1: Liên kết bỏ qua nội dung (Sẽ ẩn đi, chỉ hiện khi nhấn Tab) -->
-    <a href="#main-content" class="skip-link">Chuyển đến nội dung chính</a>
+    <h1>Thư viện ảnh tương tác</h1>
 
-    <header>
-        <h1>Khám Phá Di Sản Việt Nam</h1>
-        <!-- YÊU CẦU 2: Thanh điều hướng hấp dẫn, dễ truy cập -->
-        <nav aria-label="Menu chính">
-            <ul class="nav-links">
-                <li><a href="#">Trang chủ</a></li>
-                <li><a href="#">Bộ sưu tập</a></li>
-                <li><a href="#">Thông tin</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Khung hiển thị hình ảnh lớn -->
+    <div id="image">
+        Hover over or focus on an image below to display here.
+    </div>
 
-    <main id="main-content">
-        
-        <!-- ========================================================
-           MỚI THÊM: Khung hiển thị ảnh lớn (id="image") phục vụ bài tập JS
-           ======================================================== -->
-        <div id="image">
-            Di chuột qua một hình ảnh bên dưới để hiển thị ở đây.
-        </div>
+    <!-- Yêu cầu 2: Sử dụng 6 hình ảnh có thẻ alt đầy đủ -->
+    <!-- Yêu cầu 6: Giữ nguyên onmouseover/onmouseleave và thêm onfocus/onblur -->
+    <div class="gallery">
+        <img class="preview" 
+             alt="Ảnh thiên nhiên núi rừng hùng vĩ" 
+             src="https://picsum.photos/id/1018/600/400" 
+             onmouseover="upDate(this)" 
+             onmouseleave="unDo()" 
+             onfocus="upDate(this)" 
+             onblur="unDo()">
 
-        <!-- YÊU CẦU 3: Sử dụng Grid và Flex cho bố cục -->
-        <section class="grid-layout">
-            
-            <!-- Ảnh 1: Đã thêm thuộc tính onmouseover và onmouseout để kích hoạt JS -->
-            <div class="card">
-                <img src="https://picsum.photos/600/400?random=1" alt="Vẻ đẹp Tràng An - Ninh Bình" onmouseover="upDate(this)" onmouseout="unDo()">
-                <h3>Địa danh 1</h3>
-                <p>Mô tả ngắn gọn về địa danh thứ nhất.</p>
-            </div>
-            
-            <!-- Ảnh 2: Đã thêm thuộc tính onmouseover và onmouseout để kích hoạt JS -->
-            <div class="card">
-                <img src="https://picsum.photos/600/400?random=2" alt="Vịnh Hạ Long - Quảng Ninh" onmouseover="upDate(this)" onmouseout="unDo()">
-                <h3>Địa danh 2</h3>
-                <p>Mô tả ngắn gọn về địa danh thứ hai.</p>
-            </div>
+        <img class="preview" 
+             alt="Bờ biển hoàng hôn thơ mộng" 
+             src="https://picsum.photos/id/1015/600/400" 
+             onmouseover="upDate(this)" 
+             onmouseleave="unDo()" 
+             onfocus="upDate(this)" 
+             onblur="unDo()">
 
-            <!-- Ảnh 3: Mình thêm 1 thẻ ảnh nữa cho bố cục Lưới nhìn cân đối và nhiều tư liệu hơn -->
-            <div class="card">
-                <img src="https://picsum.photos/600/400?random=3" alt="Cố đô Huế - Thừa Thiên Huế" onmouseover="upDate(this)" onmouseout="unDo()">
-                <h3>Địa danh 3</h3>
-                <p>Mô tả ngắn gọn về địa danh thứ ba.</p>
-            </div>
+        <img class="preview" 
+             alt="Con đường mùa thu lá vàng" 
+             src="https://picsum.photos/id/1039/600/400" 
+             onmouseover="upDate(this)" 
+             onmouseleave="unDo()" 
+             onfocus="upDate(this)" 
+             onblur="unDo()">
 
-        </section>
-    </main>
+        <img class="preview" 
+             alt="Hồ nước trong xanh giữa lòng núi" 
+             src="https://picsum.photos/id/1043/600/400" 
+             onmouseover="upDate(this)" 
+             onmouseleave="unDo()" 
+             onfocus="upDate(this)" 
+             onblur="unDo()">
 
-    <footer>
-        <p>&copy; 2026 Khu Di Tích Lịch Sử. Tất cả các quyền được bảo lưu.</p>
-    </footer>
+        <img class="preview" 
+             alt="Thành phố lên đèn về đêm" 
+             src="https://picsum.photos/id/1059/600/400" 
+             onmouseover="upDate(this)" 
+             onmouseleave="unDo()" 
+             onfocus="upDate(this)" 
+             onblur="unDo()">
 
-    <!-- ========================================================
-       MỚI THÊM: Thẻ kết nối mã nguồn với file JavaScript ở cuối trang
-       ======================================================== -->
-    <script src="gallery.js"></script>
+        <img class="preview" 
+             alt="Rừng thông phủ sương mù" 
+             src="https://picsum.photos/id/1069/600/400" 
+             onmouseover="upDate(this)" 
+             onmouseleave="unDo()" 
+             onfocus="upDate(this)" 
+             onblur="unDo()">
+    </div>
 
 </body>
 </html>
