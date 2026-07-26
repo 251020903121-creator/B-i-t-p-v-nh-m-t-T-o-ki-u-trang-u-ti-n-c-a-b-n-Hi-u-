@@ -1,118 +1,56 @@
-/* Tổng thể Box Model (YÊU CẦU 4) */
-* {
-    box-sizing: border-box; /* Đảm bảo padding/border không làm vỡ chiều rộng */
-    margin: 0;
-    padding: 0;
-}
-
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-}
-
-/* ========================================================
-   YÊU CẦU 1: Hiệu ứng chỉ hiển thị liên kết khi tập trung (Focus)
-   ======================================================== */
-.skip-link {
-    position: absolute;
-    top: -100px; /* Đẩy hẳn thẻ ra khỏi màn hình để ẩn đi */
-    left: 10px;
-    background: #bf0000;
-    color: white;
-    padding: 10px 15px;
-    z-index: 100;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 4px;
-    transition: top 0.2s ease;
-}
-
-/* Khi người dùng nhấn phím TAB trúng liên kết, nó sẽ hiện ra */
-.skip-link:focus {
-    top: 10px; 
-}
-
-/* ========================================================
-   YÊU CẦU 2 & 3: Thanh điều hướng Flexbox hấp dẫn
-   ======================================================== */
-header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
+    background-color: #f4f4f9;
     text-align: center;
+    margin: 20px;
 }
 
-.nav-links {
-    display: flex;             /* Sử dụng Flex */
-    justify-content: center;   /* Căn giữa menu */
-    list-style: none;
-    margin-top: 15px;
+h1 {
+    color: #333;
 }
 
-.nav-links li {
-    margin: 0 15px;
-}
-
-.nav-links a {
-    color: #ffcc00;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 18px;
-    padding: 5px 10px;
-}
-
-.nav-links a:hover, .nav-links a:focus {
-    color: white;
-    outline: 2px solid #ffcc00; /* Tăng tính truy cập khi dùng phím để di chuyển */
-}
-
-/* ========================================================
-   YÊU CẦU 3 & 4: Bố cục Grid & Mô hình hộp (Box Model) cho thẻ nội dung
-   ======================================================== */
-.grid-layout {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Tự động co giãn theo màn hình */
-    gap: 30px;
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Sử dụng hiệu quả Margin, Padding, Border (Box Model) */
-.card {
-    background: white;
-    border: 1px solid #ddd;   /* Border */
-    border-radius: 8px;
-    padding: 20px;            /* Padding bên trong */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.card img {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-    margin-bottom: 15px;      /* Margin bên dưới ảnh */
-}
-/* Định dạng cho khung hiển thị ảnh lớn (id="image") */
+/* Khung hiển thị hình ảnh lớn */
 #image {
-    width: 100%;
-    height: 450px;
-    border: 4px solid #333;
-    border-radius: 8px;
-    background-color: #8e8e8e;
+    line-height: 300px;
+    width: 600px;
+    height: 300px;
+    border: 3px solid #333;
+    margin: 20px auto;
+    background-color: #e0e0e0;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    text-align: center;
-    color: #ffffff;
-    font-size: 150%;
+    color: #333;
+    font-size: 120%;
     font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Danh sách các ảnh thu nhỏ */
+.gallery {
     display: flex;
-    align-items: center;
     justify-content: center;
-    margin: 20px 0;
-    padding: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    flex-wrap: wrap;
+    gap: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.preview {
+    width: 120px;
+    height: 90px;
+    object-fit: cover;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+/* Hiệu ứng khi di chuột hoặc nhấn phím Tab (Focus) */
+.preview:hover, 
+.preview:focus {
+    transform: scale(1.08);
+    border-color: #007bff;
+    outline: 3px solid #007bff; /* Giúp phân biệt rõ ràng khi điều hướng bằng bàn phím */
 }
