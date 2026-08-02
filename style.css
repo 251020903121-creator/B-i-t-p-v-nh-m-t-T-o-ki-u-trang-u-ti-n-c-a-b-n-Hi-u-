@@ -54,3 +54,20 @@ h1 {
     border-color: #007bff;
     outline: 3px solid #007bff; /* Giúp phân biệt rõ ràng khi điều hướng bằng bàn phím */
 }
+@media screen and (min-width: 772px) {
+    div {
+        width: 45%;
+        display: inline-block; /* Hiển thị các div nằm ngang cạnh nhau (2 div/hàng) */
+    }
+
+    img {
+        max-height: 30vh; /* Giới hạn chiều cao hình ảnh không quá 30% khung xem */
+    }
+}
+
+/* 2. Chế độ xem Màn hình lớn (Large Screen View - từ 998px) */
+@media screen and (min-width: 998px) {
+    div {
+        width: 30%; /* Điều chỉnh chiều rộng để hiển thị 3 div/hàng */
+    }
+}
